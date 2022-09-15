@@ -1,0 +1,31 @@
+from PyQt5.QtCore import Qt
+
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QRadioButton, QHBoxLayout 
+
+app = QApplication([])
+main_win = QWidget()
+main_win.setWindowTitle("Здоров'я")
+main_win.resize(1200, 800)
+
+line = QVBoxLayout()
+title = QLabel("Ласкаво просимо в програмі з визначення стану здоров'я!")
+title1 = QLabel("""Ця програма дозволить вам за допомогою Теста Руф'є провести первинну діагностику вашого здоров'я. 
+Проба Руф'є являє собою нагрузочний комплекс призначений для оцінки працездатності серця під час фізичних нагрузок.
+У випробовуваного, який перебуває в положенні лежачи на спині протягом 5 хвилин визначає частоту пульсу за 15 секунд;
+потім протягом 45 сек випробований виконує 30 присідань.
+Після закінчення нагрузки випробований лягає і в нього знову підраховують число пульсацій за перші 15 сек, 
+а потім - за останні 15 сек першої хвилини періода відновлення.
+Важливо! Якщо під час проведення випробування ви відчуєте себе погано(з'явилься запаморочення, шум в вухах, 
+сильна задишка і т.д.), то тест необхідно прирвати і звернутися до лікаря.
+""")
+button = QPushButton("Почати")
+
+line.addWidget(title, alignment=Qt.AlignCenter)
+line.addWidget(title1, alignment=Qt.AlignCenter)
+line.addWidget(button, alignment=Qt.AlignCenter)
+
+
+main_win.setLayout(line)
+
+main_win.show()
+app.exec_()
